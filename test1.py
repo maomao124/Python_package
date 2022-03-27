@@ -49,6 +49,9 @@ class C:
     age = property(getage, setage)
 
     # 定义个私有方法
+    def __f(self):
+        print("私有方法")
+
     def display(self):
         print(self.__name, self.__sex, self.__age)
 
@@ -71,3 +74,11 @@ if __name__ == '__main__':
     print(c.sex)
     print(c.age)
     c.display()
+
+    # 使用私有方法和属性
+    print(c._C__name)
+    print(c._C__sex)
+    print(c._C__age)
+    c._C__age = 18
+    print(c._C__age)
+    c._C__f()
